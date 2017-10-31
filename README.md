@@ -21,5 +21,5 @@ The MITRE Attack API python project provides a way for people to easily access d
 
 # Examples
 Examples
-from mitre import AttackAPI
-attack = AttackAPI()
+`from mitre import AttackAPI
+attack = AttackAPI()`
