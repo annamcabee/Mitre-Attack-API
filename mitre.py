@@ -216,12 +216,3 @@ class AttackAPI(object):
             }
             AttackAll.append(object)
         return AttackAll
-
-
-def main():
-    attack = AttackAPI()
-    attack_all = attack.get_matrix()
-   # print json_normalize(attack_all)
-
-
-main()
