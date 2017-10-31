@@ -20,5 +20,4 @@ The MITRE Attack API python project provides a way for people to easily access d
 3. Integrate with your code
 
 # Examples
-`from mitre import AttackAPI
-attack = AttackAPI()`
+[Jupyter Notebook Example](Examples.ipynb)
