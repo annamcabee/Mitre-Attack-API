@@ -5,7 +5,7 @@ Python library to interact with the MITRE attack framework via the MITRE API
 The MITRE Attack API python project provides a way for people to easily access data from the MITRE attack framework. With this project, you can manipulate data provided by the MITRE API. The "AttackAPI" object has the following methods:
 
 | Method        | Method Details           | 
-| ------------- |:-------------:| 
+| ------------- |-------------| 
 | get_all_techniques()      | Returns a list of dictionaries with each dictionary representing a technique and its important attributes | 
 | get_all_groups()      | Returns a list of dictionaries with each dictionary representing a group and its important attributes      | 
 | get_all_software() | Returns a list of dictionaries with each dictionary representing a software/tool and its important attributes      | 
