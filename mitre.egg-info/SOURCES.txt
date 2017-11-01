@@ -1,0 +1,8 @@
+README.md
+mitre.py
+setup.py
+mitre.egg-info/PKG-INFO
+mitre.egg-info/SOURCES.txt
+mitre.egg-info/dependency_links.txt
+mitre.egg-info/requires.txt
+mitre.egg-info/top_level.txt

@@ -17,6 +17,7 @@ class AttackAPI(object):
         response = requests.get("https://attack.mitre.org/api.php?action=ask&format=json&query=%5B%5BCategory%3ATechnique%5D%5D%7C%3FHas+CAPEC+ID%7C%3FHas+ID%7C%3FHas+analytic+details%23-ia%7C%3FHas+contributor%7C%3FHas+data+source%7C%3FHas+display+name%7C%3FHas+link+text%7C%3FHas+mitigation%23-ia%7C%3FHas+platform%7C%3FHas+tactic%7C%3FHas+technical+description%23-ia%7C%3FHas+technique+name%7C%3FRequires+permissions%7C%3FRequires+system%7C%3FBypasses+defense%7C%3FCitation+reference%7Climit%3D9999")
         data = json.loads(response.content)
         results = data['query']['results']
+        print "Querying all techniques"
         for item in results:
             technique = results[str(item)]
             technique_dict = {
@@ -47,6 +48,7 @@ class AttackAPI(object):
         response = requests.get("https://attack.mitre.org/api.php?action=ask&format=json&query=%5B%5BCategory%3AGroup%5D%5D%7C%3FHas+ID%7C%3FHas+alias%7C%3FHas+description%23-ia%7C%3FHas+display+name%7C%3FHas+link+text%7C%3FHas+technique%7C%3FUses+software%7C%3FCitation+reference%7C%3FHas+URL%7Climit%3D9999")
         data = json.loads(response.content)
         results = data['query']['results']
+        print "Querying all groups"
         for item in results:
             group = results[str(item)]
             group_dict = {
@@ -69,6 +71,7 @@ class AttackAPI(object):
         response = requests.get("https://attack.mitre.org/api.php?action=ask&format=json&query=%5B%5BCategory%3ASoftware%5D%5D%7C%3FHas+ID%7C%3FHas+alias%7C%3FHas+description%23-ia%7C%3FHas+display+name%7C%3FHas+link+text%7C%3FHas+software+type%7C%3FHas+technique%7C%3FCitation+reference%7Climit%3D9999")
         data = json.loads(response.content)
         results = data['query']['results']
+        print "Querying all software"
         for item in results:
             software = results[str(item)]
             software_dict = {
@@ -89,6 +92,7 @@ class AttackAPI(object):
         response = requests.get("https://attack.mitre.org/api.php?action=ask&format=json&query=%5B%5BHas+technique+object%3A%3A%2B%5D%5D%7C%3FHas+technique+description%23-ia%7C%3FHas+technique+object%7Climit%3D9999")
         data = json.loads(response.content)
         results = data['query']['results']
+        print "Querying all subobjects"
         for item in results:
             technique_subobject = results[str(item)]
             technique_subobject_dict = {
@@ -101,6 +105,7 @@ class AttackAPI(object):
             technique_subobject_list.append(technique_subobject_dict)
         return technique_subobject_list
 
+    # TODO check numbers
     def get_matrix(self):
         tactic_dict = {}
         technique_list = self.get_all_techniques()
@@ -111,24 +116,11 @@ class AttackAPI(object):
                     tactic_dict[tactic].append(technique['Display Name'][0])
                 else:
                     tactic_dict[tactic] = [technique['Display Name'][0]]
-        attack = AttackAPI()
-        numKeys = len(tactic_dict.keys())
-        maxItems = 0
-        for key in tactic_dict:
-            if len(tactic_dict[key]) > maxItems:
-                maxItems = len(tactic_dict[key])
-        # creates a double array so that matrix is in the same format
-        newMatrix = [["" for x in range((maxItems+1))] for y in range(numKeys)]
-        keyIndex = 0
-        valueIndex = 0
-        for key, value in tactic_dict.items():
-            valueIndex = 1
-            newMatrix[keyIndex][0] = key
-            for val in value:
-                newMatrix[keyIndex][valueIndex] = val
-                valueIndex = valueIndex + 1
-            keyIndex = keyIndex + 1
-        return newMatrix
+        for tactic in tactic_dict:
+            print tactic + " -> " + str(tactic_dict[tactic])
+            counter = counter + len(tactic_dict[tactic])
+        print counter
+        return tactic_dict
 
     def get_attribution(self):
         AttriBucket = []
