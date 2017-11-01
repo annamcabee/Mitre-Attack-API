@@ -18,6 +18,7 @@ The MITRE Attack API python package provides a way for people to easily access d
 
 # Installation
 If you have pip installed, run `pip install mitreapi`
+
 Otherwise:
 1. Clone this repo
 2. Run `python setup.py install` in the root of the cloned repo directory
