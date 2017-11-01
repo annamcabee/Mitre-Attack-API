@@ -10,17 +10,22 @@ The MITRE Attack API python package provides a way for people to easily access d
 | get_all_groups()      | Returns a list of dictionaries with each dictionary representing a group and its important attributes      | 
 | get_all_software() | Returns a list of dictionaries with each dictionary representing a software/tool and its important attributes      | 
 | get_all_subobjects()      | Returns a list of dictionaries with each dictionary representing a technique subobject and its important attributes      | 
-| get_matrix() | Returns a double array with each tactic and their corresponding technqiues      | 
+| get_matrix() | Returns a double array with each tactic and their corresponding techniques      | 
 | get_attribution() | Returns a list of dictionaries with each dictionary representing a group with details on the software and techniques used by that group     | 
 | get_all() | Returns a list of dictionaries with a lot of the information above in a flat format, including all of the attribution data, as well as the technique data       | 
 
 You can see all of the above methods in use in the "Examples" section.
 
 # Installation
-1. Run `pip install mitreapi`
-2. Integrate with your code through  `from mitreapi import AttackAPI`
-3. The best way to use the library is with the pandas library, so if you dont have that run `pip install pandas`
+If you have pip installed, run `pip install mitreapi`
+Otherwise:
+1. Clone this repo
+2. Run `python setup.py install` in the root of the cloned repo directory
+
+# Integrating with your 
+1. Integrate with your code through  `from mitreapi import AttackAPI`
+2. The easiest way to use this package is with the pandas library, so if you dont have that run `pip install pandas`
+3. Look at the Examples section for more information
 
 # Examples
-Here are some sample use cases and outputs of the pacakge
 [Jupyter Notebook Example](Examples.ipynb)
