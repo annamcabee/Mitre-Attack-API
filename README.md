@@ -15,9 +15,8 @@ The MITRE Attack API python project provides a way for people to easily access d
 | get_all() | Returns a list of dictionaries with a lot of the information above in a flat format, including all of the attribution data, as well as the technique data       | 
 
 # Installation
-1. Clone this repo
-2. From the root directory of the repo, run `python setup.py install`
-3. Integrate with your code through  `from mitreapi import AttackAPI`
+1. Run `pip install mitreapi`
+2. Integrate with your code through  `from mitreapi import AttackAPI`
 
 # Examples
 [Jupyter Notebook Example](Examples.ipynb)
