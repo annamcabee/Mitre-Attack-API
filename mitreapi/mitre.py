@@ -176,7 +176,6 @@ class AttackAPI(object):
                     AttriFinal.append(object)
         return AttriFinal
 
-    # TODO
     def get_all(self):
         AttackAll = []
         Attribution = self.get_attribution()
