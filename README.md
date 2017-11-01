@@ -17,7 +17,7 @@ The MITRE Attack API python project provides a way for people to easily access d
 # Installation
 1. Clone this repo
 2. From the root directory of the repo, run `python setup.py install`
-3. Integrate with your code
+3. Integrate with your code through  `from mitreapi import AttackAPI`
 
 # Examples
 [Jupyter Notebook Example](Examples.ipynb)
