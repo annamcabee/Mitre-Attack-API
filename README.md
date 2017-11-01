@@ -14,7 +14,7 @@ The MITRE Attack API python package provides a way for people to easily access d
 | get_attribution() | Returns a list of dictionaries with each dictionary representing a group with details on the software and techniques used by that group     | 
 | get_all() | Returns a list of dictionaries with a lot of the information above in a flat format, including all of the attribution data, as well as the technique data       | 
 
-You can see all of the above methods in use in the "Examples" section.
+** Note: You can see all of the above methods in use in the "Examples" section.
 
 # Installation
 If you have pip installed, run `pip install mitreapi`
