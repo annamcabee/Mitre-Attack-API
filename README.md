@@ -23,10 +23,18 @@ Otherwise:
 1. Clone this repo
 2. Run `python setup.py install` in the root of the cloned repo directory
 
-# Integrating with your 
+# Integrating with your Code
 1. Integrate with your code through  `from mitreapi import AttackAPI`
 2. The easiest way to use this package is with the pandas library, so if you dont have that run `pip install pandas`
-3. Look at the Examples section for more information
+3. Below is a trivial example of integration, look at the examples section for more information
+```
+from mitreapi import AttackAPI
+from pandas import *
+from pandas.io.json import json_normalize
 
+attack = AttackAPI()
+techniques = attack.get_all_techniques()
+groups = attack.get_all_groups()
+```
 # Examples
 [Jupyter Notebook Example](Examples.ipynb)
