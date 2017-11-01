@@ -1,0 +1,9 @@
+README.md
+setup.py
+mitreapi/__init__.py
+mitreapi/mitre.py
+mitreapi.egg-info/PKG-INFO
+mitreapi.egg-info/SOURCES.txt
+mitreapi.egg-info/dependency_links.txt
+mitreapi.egg-info/requires.txt
+mitreapi.egg-info/top_level.txt
