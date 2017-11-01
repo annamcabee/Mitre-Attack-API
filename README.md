@@ -17,6 +17,7 @@ The MITRE Attack API python project provides a way for people to easily access d
 # Installation
 1. Run `pip install mitreapi`
 2. Integrate with your code through  `from mitreapi import AttackAPI`
+3. The best way to use the library is with the pandas library, so if you dont have that run `pip install pandas`
 
 # Examples
 [Jupyter Notebook Example](Examples.ipynb)
