@@ -1,8 +1,8 @@
 # Mitre-Attack-API
-Python library to interact with the MITRE attack framework
+Python module to interact with the MITRE attack framework
 
 # About
-The MITRE Attack API python package provides a way for people to easily access data from the MITRE attack framework. With this project, you can manipulate data provided by the MITRE API. The "AttackAPI" object has the following methods:
+The MITRE Attack API python module provides a way for people to easily access data from the MITRE attack framework. With this module, you can manipulate data provided by the MITRE API. The "AttackAPI" object has the following methods:
 
 | Method        | Method Details           | 
 | ------------- |-------------| 
@@ -25,7 +25,7 @@ Otherwise:
 
 # Integrating with your Code
 1. Integrate with your code through  `from mitreapi import AttackAPI`
-2. The easiest way to use this package is with the pandas library, so if you dont have that run `pip install pandas`
+2. The easiest way to use this package is with the pandas module, so if you dont have that run `pip install pandas`
 3. Below is a trivial example of integration, look at the examples section for more information
 ```
 from mitreapi import AttackAPI
