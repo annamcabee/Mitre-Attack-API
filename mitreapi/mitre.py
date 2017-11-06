@@ -144,6 +144,7 @@ class AttackAPI(object):
                             'Group': g['Name'],
                             'Group Alias': g['Alias'],
                             'Group ID': g['ID'],
+							'Software': grt,
                             'Technique Name': x['Technique Name'],
                             'Technique ID': x['Technique ID'],
                             'Description': x['Description']
@@ -155,6 +156,7 @@ class AttackAPI(object):
                         'Group': g['Name'],
                         'Group Alias': g['Alias'],
                         'Group ID': g['ID'],
+						'Software': [],
                         'Technique Name': y['Technique Name'],
                         'Technique ID': y['Technique ID'],
                         'Description': y['Description']
@@ -167,6 +169,7 @@ class AttackAPI(object):
                         'Group': a['Group'],
                         'Group Alias': a['Group Alias'],
                         'Group ID': a['Group ID'],
+						'Software': a['Software'],
                         'Tactic': t['Tactic'],
                         'Technique Name': a['Technique Name'],
                         'Technique ID': a['Technique ID'],
@@ -188,6 +191,7 @@ class AttackAPI(object):
                         'Group Alias': a['Group Alias'],
                         'Group ID': a['Group ID'],
                         'Tactic': a['Tactic'],
+						'Software': a['Software'],
                         'Technique Name': a['Technique Name'],
                         'Technique ID': a['Technique ID'],
                         'Description': a['Description'],
@@ -205,14 +209,15 @@ class AttackAPI(object):
                     AttackAll.append(object)
         for x in Techniques:
             object = {
-				'Group' : [],
+			    'Group' : [],
 				'Group Alias' : [],
 				'Group ID' : [],
+				'Software': [],
                 'Tactic': x['Tactic'],
                 'Technique Name': x['Technique Name'],
                 'Technique ID': x['Full Text'],
                 'Description': x['Technical Description'],
-                'Data Source': x['Tactic'],
+                'Data Source': x['Data Source'],
                 'Bypass': x['Bypass'],
                 'Analytic Details': x['Analytic Details'],
                 'Mitigation': x['Mitigation'],
