@@ -205,9 +205,12 @@ class AttackAPI(object):
                     AttackAll.append(object)
         for x in Techniques:
             object = {
+				'Group' : [],
+				'Group Alias' : [],
+				'Group ID' : [],
                 'Tactic': x['Tactic'],
                 'Technique Name': x['Technique Name'],
-                'Technique ID': x['ID'],
+                'Technique ID': x['Full Text'],
                 'Description': x['Technical Description'],
                 'Data Source': x['Tactic'],
                 'Bypass': x['Bypass'],
