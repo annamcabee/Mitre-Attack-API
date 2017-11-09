@@ -125,7 +125,7 @@ class AttackAPI(object):
                     tactic_dict[tactic].append(technique['Display Name'][0])
                 else:
                     tactic_dict[tactic] = [technique['Display Name'][0]]
-        num_keys = len(tactic_dict.keys())
+        num_keys = len(list(tactic_dict.keys()))
         max_items = 0
         for key in tactic_dict:
             if len(tactic_dict[key]) > max_items:
@@ -136,7 +136,7 @@ class AttackAPI(object):
             for y in range(num_keys)]
         key_index = 0
         value_index = 0
-        for key, value in tactic_dict.items():
+        for key, value in list(tactic_dict.items()):
             value_index = 1
             new_matrix[key_index][0] = key
             for val in value:
