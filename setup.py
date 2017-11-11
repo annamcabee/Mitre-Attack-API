@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='mitreapi',
-    version='1.1',
+    version='1.2',
     description='MITRE Attack API',
     author=['Anna McAbee', 'Roberto Rodriguez'],
     author_email=['annamcabee@gmail.com', 'rrodri0622@gmail.com'],

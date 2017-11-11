@@ -117,33 +117,40 @@ class AttackAPI(object):
         return technique_subobject_list
 
     def get_matrix(self):
-        tactic_dict = {}
-        technique_list = self.get_all_techniques()
-        for technique in technique_list:
-            for tactic in technique['Tactic']:
-                if tactic in tactic_dict:
-                    tactic_dict[tactic].append(technique['Display Name'][0])
-                else:
-                    tactic_dict[tactic] = [technique['Display Name'][0]]
-        num_keys = len(list(tactic_dict.keys()))
-        max_items = 0
-        for key in tactic_dict:
-            if len(tactic_dict[key]) > max_items:
-                max_items = len(tactic_dict[key])
-        # creates a double array so that matrix is in the same format
-        new_matrix = [
-            ["" for x in range((max_items + 1))]
-            for y in range(num_keys)]
-        key_index = 0
-        value_index = 0
-        for key, value in list(tactic_dict.items()):
-            value_index = 1
-            new_matrix[key_index][0] = key
-            for val in value:
-                new_matrix[key_index][value_index] = val
-                value_index = value_index + 1
-            key_index = key_index + 1
-        return new_matrix
+        tactics_list = ['Persistence', 'Privilege Escalation', 'Defense Evasion', 'Credential Access', 'Discovery', 'Lateral Movement','Execution', 'Collection', 'Exfiltration', 'Command and Control']
+        tactic_technique_dict = {t:[] for t in tactics_list}
+        techniques_list = self.get_all_techniques()
+        for technique in techniques_list:
+            for tactic in tactics_list:
+                    if tactic in  technique['Tactic']:
+                            tactic_technique_dict[tactic].append(technique['Display Name'])
+        for tt in tactic_technique_dict:
+            tactic_technique_dict[tt].sort()
+        max_tactic = max(tactic_technique_dict, key=lambda k: len(tactic_technique_dict[k]))
+        max_values = len(tactic_technique_dict[max_tactic])
+        def value(tech, ind):
+            try:
+                tactic_technique_dict[tech][ind]
+                return tactic_technique_dict[tech][ind]
+            except:
+                return " "
+                pass
+        matrix = []
+        for i in range(max_values):
+            object = {
+                'Persistence': value('Persistence', i),
+                'Privilege Escalation': value('Privilege Escalation', i),
+                'Defense Evasion': value('Defense Evasion', i),
+                'Credential Access': value('Credential Access', i),
+                'Discovery': value('Discovery', i),
+                'Lateral Movement': value('Lateral Movement', i),
+                'Execution': value('Execution', i),
+                'Collection': value('Collection', i),
+                'Exfiltration': value('Exfiltration', i),
+                'Command and Control': value('Command and Control', i)
+            }
+            matrix.append(object)
+        return matrix
 
     def get_attribution(self):
         attri_bucket = []
