@@ -10,7 +10,7 @@ The MITRE Attack API python module provides a way for people to easily access da
 | get_all_groups()      | Returns a list of dictionaries with each dictionary representing a group and its important attributes      | 
 | get_all_software() | Returns a list of dictionaries with each dictionary representing a software/tool and its important attributes      | 
 | get_all_subobjects()      | Returns a list of dictionaries with each dictionary representing a technique subobject and its important attributes      | 
-| get_matrix() | Returns a double array with each tactic and their corresponding techniques      | 
+| get_matrix() | Returns a list of dictionaries with each dictionary containing a single tactic to technique mapping      | 
 | get_attribution() | Returns a list of dictionaries with each dictionary representing a group with details on the software and techniques used by that group     | 
 | get_all() | Returns a list of dictionaries with a lot of the information above in a flat format, including all of the attribution data, as well as the technique data       | 
 
